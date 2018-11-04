@@ -10,7 +10,7 @@ var passport = require("passport");//for identification
 //connecting to db
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/LUX", function(err){
+mongoose.connect("mongodb://localhost/LUX", { useNewUrlParser: true }, function(err){
   if(err){
 		console.log("failed to connect to DB");
 
@@ -36,12 +36,6 @@ app.use(passport.session());//allows authentication info to pass between pages
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());//it now says body works
-
-//will this app work without bodyParser instead with bus boy?
-var fileupload = require("express-fileupload");
-app.use(fileupload());
-
-app.use("/", express.static(__dirname+"/public") );
 
 const rtSchedule = require("./routes/rtMain.js");
 app.use(rtSchedule);
