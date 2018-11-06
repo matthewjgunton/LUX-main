@@ -1,7 +1,7 @@
 var passport = require("passport");
 var userModel = require("../models/users.js");
 
-exports.facebookLogin = passport.authenticate('facebook', {scope: ['read_stream', 'email']});
+exports.facebookLogin = passport.authenticate('facebook', {scope: ['public_profile', 'email']});
 
 exports.facebookCallback = passport.authenticate('facebook', {
   successRedirect: '/',

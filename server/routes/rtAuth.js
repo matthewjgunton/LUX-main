@@ -7,10 +7,10 @@ sendRoutes.route("/status")
   .get(controller.checkStatus);
 
 sendRoutes.route("/facebook")
-  .get(controller.googleLogin);
+  .get(controller.facebookLogin);
 
 sendRoutes.route("/facebook/callback")
-  .get(controller.googleCallback);
+  .get(controller.facebookCallback);
 
 sendRoutes.route("/logout")
   .get(controller.logout);

@@ -37,8 +37,8 @@ app.use(passport.session());//allows authentication info to pass between pages
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());//it now says body works
 
-const rtSchedule = require("./routes/rtMain.js");
-app.use(rtSchedule);
+const rtAuth = require("./routes/rtAuth.js");
+app.use("/auth", rtAuth);``
 
 app.listen(5000);
 console.log("lift off");

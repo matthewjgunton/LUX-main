@@ -36,21 +36,26 @@ passport.use(new FacebookStrategy({
         if(user){
           return done(null, user);
         }else{
-          console.log('new google user');
+          console.log('new facebook user');
+
+          //i do not know if these profile properties line up with facebook's API
+
+          console.log("8*******@@@@@@@@@@@@@",profile);
+
           var newUser = new User();
-          newUser.matthew.id = profile.id;
-          newUser.matthew.token = accessToken;
-          newUser.matthew.name.givenName = profile.name.givenName;
-          newUser.matthew.name.familyName = profile.name.familyName;
-          newUser.matthew.name.fullName = profile.name.givenName+" "+profile.name.familyName;
-          newUser.matthew.email = profile.emails[0].value;
+          newUser.id = profile.id;
+          newUser.token = accessToken;
+          newUser.name.givenName = profile.first_name;
+          newUser.name.familyName = profile.last_name;
+          newUser.name.fullName = profile.givenName+" "+profile.name.middle_name+" "+profile.name.familyName;
+          newUser.email = profile.email;
 
           newUser.save(function(err, result){
             if(err){
               throw err;
             }
             else{
-              console.log("new google "+result);
+              console.log("new facebook "+result);
               return done(null, newUser);
             }
           })
