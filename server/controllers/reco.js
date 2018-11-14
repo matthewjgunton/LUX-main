@@ -33,7 +33,19 @@ exports.findEvents = (req, res) =>{
 
 function ranking(events){
 
-//write here
+  /*
+var date;       variables of event, don't need cause its above
+var genre;
+var friends;
+var counter; */
+  
+if (events.timeRelevance == date) {
+   counter++;
+}
+if (events.genre == genre) {
+   counter++;
+}
+counter += events.friendsGoing.length;
 
 
 }
