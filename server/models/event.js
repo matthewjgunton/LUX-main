@@ -16,3 +16,8 @@ const eventSchema = new schema({
   //every field does not have to be filled out
   //if a property exists, it needs to be the right type(num vs string)
 });
+
+const uModel = mongoose.model("event", eventSchema);
+
+console.log("event model online");
+module.exports = eventSchema;
