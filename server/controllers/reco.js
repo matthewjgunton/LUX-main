@@ -38,14 +38,17 @@ var date;       variables of event, don't need cause its above
 var genre;
 var friends;
 var counter; */
-  
+
+var dateWeight = 1;
+var genreWeight = 1;
+var friendsWeight = 1;
 if (events.timeRelevance == date) {
-   counter++;
+   counter = counter + (1 * dateWeight);
 }
 if (events.genre == genre) {
-   counter++;
+   counter = counter + (1 * genreWeight);
 }
-counter += events.friendsGoing.length;
+counter += (events.friendsGoing.length * friendsWeight);
 
 
 }
