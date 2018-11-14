@@ -38,7 +38,10 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());//it now says body works
 
 const rtAuth = require("./routes/rtAuth.js");
-app.use("/auth", rtAuth);``
+app.use("/auth", rtAuth);
+
+const rtReco = require("./routes/rtReco.js");
+app.use("/reco", rtReco);
 
 app.listen(5000);
 console.log("lift off");

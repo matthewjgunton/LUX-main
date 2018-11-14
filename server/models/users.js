@@ -9,6 +9,7 @@ const userSchema = new schema({
     id: String,
     token: String,
     email: String,
+    genresPref: String,
     name: {
       givenName: String,
       familyName: String,
