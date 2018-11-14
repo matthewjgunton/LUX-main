@@ -13,8 +13,6 @@ const eventSchema = new schema({
       place: String,
       friendsGoing: String
     }
-  //every field does not have to be filled out
-  //if a property exists, it needs to be the right type(num vs string)
 });
 
 const uModel = mongoose.model("event", eventSchema);
