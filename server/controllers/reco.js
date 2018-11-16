@@ -32,23 +32,30 @@ exports.findEvents = (req, res) =>{
 }
 
 function ranking(events){
-
+var counter
 var dateWeight = 1;
 var genreWeight = 1;
 var friendsWeight = 1;
 var signedUpWeight = -1;
+  
+try{
 
-// if statement probably has to be fixed
-if (events.signedUp == true) {        // if event is taged as signed up, counter is negative, making it last
-  counter = counter * signedUpWeight; // could remove all negative values from array so that they don't show up at all
-}
-if (events.timeRelevance == date) {
-   counter = counter + (1 * dateWeight);
-}
-if (events.genre == genre) {
-   counter = counter + (1 * genreWeight);
-}
-counter += (events.friendsGoing.length * friendsWeight);
+  for (int i = 0; i < envents.length; i++) {
+    counter = 1;
+    if (events[i].signedUp == true) {
+      counter *= signedUpWeight;
+    }
+    if (events[i].timeRelevance == date) {
+     counter += (1 * dateWeight);
+    }
+    if (events[i].genre == genre) {
+     counter += (1 * genreWeight);
+    }
+    counter += (events[i].friendsGoing.length * friendsWeight);
 
-
+  }
+    return res.json({error: null, data: events.sort(-1)});
+}
+  catch(e){
+    return.res.json({error: true});
 }
