@@ -42,6 +42,11 @@ var counter; */
 var dateWeight = 1;
 var genreWeight = 1;
 var friendsWeight = 1;
+var signedUpWeight = -1;
+  
+if (events.signedUp == true) {        // if event is taged as signed up, counter is negative, making it last
+  counter = counter * signedUpWeight; // could remove all negative values from array so that they don't show up at all
+}
 if (events.timeRelevance == date) {
    counter = counter + (1 * dateWeight);
 }
