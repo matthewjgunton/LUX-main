@@ -11,7 +11,8 @@ const eventSchema = new schema({
       timeRelevance: String,
       genre: String,
       place: String,
-      friendsGoing: String
+      friendsGoing: String,
+      signedUp: String
     }
 });
 
