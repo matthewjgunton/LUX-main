@@ -1,25 +1,23 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-
 //create schema and model
 
 const userSchema = new schema({
-    provider: String,
+  matthew:{
     id: String,
     token: String,
     email: String,
-    genresPref: String,
     name: {
       givenName: String,
       familyName: String,
       fullName: String
     }
+  }
   //every field does not have to be filled out
   //if a property exists, it needs to be the right type(num vs string)
 });
 
-//***only needed if you allow local login
 // //THIS FUNCTION TAKES NORMAL PASSWORD AND ENCRYPTS IT
 // userSchema.methods.generateHash = function(password){
 //   return bcrypt.hashSync(password, bcrypt.genSaltSync(9));//makes all saved passwords unique, so 'abc123' can be used by many people, but saved all uniquely

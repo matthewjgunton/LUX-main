@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var session = require('express-session');//to store information between links from user
 var MongoStore = require('connect-mongo')(session);
-var mongoStore = new MongoStore({url: 'mongodb://localhost/recreationProject'});
+var mongoStore = new MongoStore({url: 'mongodb://localhost/LUX'});
 var passport = require("passport");//for identification
 
 // app.set("view engine", 'ejs');

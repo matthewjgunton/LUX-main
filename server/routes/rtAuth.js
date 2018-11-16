@@ -6,6 +6,12 @@ const controller = require("../controllers/auth.js");
 sendRoutes.route("/status")
   .get(controller.checkStatus);
 
+sendRoutes.route("/google")
+  .get(controller.googleLogin);
+
+sendRoutes.route("/google/callback")
+  .get(controller.googleCallback);
+
 sendRoutes.route("/facebook")
   .get(controller.facebookLogin);
 

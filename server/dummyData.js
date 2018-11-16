@@ -1,13 +1,14 @@
 {
   [
     {
-      "eventName": "Frat Party",
-      "provider": "Frat",
-      "event": {
-        "timeRelevance": "Today",
-        "genre": "social",
-        "place": "Frat",
-        "friendsGoing": null
+        "eventName": "Frat Party",
+        "provider": "Frat",
+        "event": {
+          "timeRelevance": "Today",
+          "genre": "social",
+          "place": "Frat",
+          "friendsGoing": null
+        }
       },
       {
         "eventName": "Acapella",
@@ -17,7 +18,7 @@
           "genre": "club",
           "place": "lamberton",
           "friendsGoing": "Mel"
-        },
+        }},
         {
           "eventName": "Jesus Christ Lecture",
           "provider": "Church",
@@ -26,7 +27,7 @@
             "genre": "academic",
             "place": "church",
             "friendsGoing": "Jesus"
-          },
+          }},
           {
             "eventName": "Freshmen Mixer",
             "provider": "Lehigh University",
@@ -35,7 +36,6 @@
               "genre": "sponsored",
               "place": "UC",
               "friendsGoing": null
-            }
-    }
+            }}
   ]
 }

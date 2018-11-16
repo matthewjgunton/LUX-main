@@ -8,6 +8,15 @@ exports.facebookCallback = passport.authenticate('facebook', {
   failureRedirect: '/'
 })
 
+exports.googleLogin = passport.authenticate('google', {scope: ['profile', 'email']});
+
+exports.googleCallback = passport.authenticate('google', {
+  //have yet to decide what the success callback function will be
+  successRedirect: '/status',
+  failureRedirect: '/',
+  failureFlash: true
+})
+
 exports.logout = (req, res) => {
   req.logout();
   res.redirect("/");
