@@ -12,7 +12,7 @@ const eventSchema = new schema({
       genre: String,
       place: String,
       friendsGoing: String,
-      signedUp: boolean
+      signedUp: String
     }
 });
 
