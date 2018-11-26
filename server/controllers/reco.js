@@ -69,6 +69,7 @@ function ranking(events){
       return res.json({error: true});
   }
 
+  // NOTE: These functions as of right now are not called, not sure when we want to call them
   // generates random string for the event, used to distinguish event from others
   function identify(events) {
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
