@@ -50,7 +50,7 @@ passport.use(new FacebookStrategy({
           newUser.matthew.name.givenName = profile.name.givenName;
           newUser.matthew.name.familyName = profile.name.familyName;
           newUser.matthew.name.fullName = profile.givenName+" "+profile.name.middle_name+" "+profile.name.familyName;
-          newUser.matthew.email = profile.emails[0].value;
+          newUser.matthew.email = profile.emails;
 
           newUser.save(function(err, result){
             if(err){

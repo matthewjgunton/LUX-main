@@ -7,6 +7,14 @@ var passport = require("passport");//for identification
 
 // app.set("view engine", 'ejs');
 
+//small but important fix:
+//very, very important!
+//DO NOT KEEP THIS IN IF IT GOES INTO PRODUCTION
+var certOptions = {
+  key: fs.readFileSync(path.resolve('/server.key')),
+  cert: fs.readFileSync(path.resolve('/server.crt'))
+}
+
 //connecting to db
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
