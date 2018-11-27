@@ -49,7 +49,7 @@ function ranking(events){
 
   try{
 
-    for (var i = 0; i < envents.length; i++) {
+    for (var i = 0; i < events.length; i++) {
       counter = 1;
       if (events[i].signedUp == true) {
         counter *= signedUpWeight;
@@ -67,6 +67,28 @@ function ranking(events){
   }
     catch(e){
       return res.json({error: true});
+  }
+
+  // NOTE: These functions as of right now are not called, not sure when we want to call them
+  // generates random string for the event, used to distinguish event from others
+  function identify(events) {
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var size = 10;
+    for (var i = 0; i < events.length; i++) {
+      for (var j = 0; j < size; i++) {
+        events[i].identifier += possible.charAt(Math.floor(Math.random() * size));
+      }
+    }
+  }
+  
+  // checks if any events have same identifier
+  function checkEvents(events) {
+    for (var i = 0; i < events.length-1; i++) {
+      if (events[i].identifier.equals(events[1+1].identifier) {
+          identify(events); // if so changes all of the elements again
+                            // pretty basic and inefficient, can be changed later
+      }
+    }
   }
 
 }

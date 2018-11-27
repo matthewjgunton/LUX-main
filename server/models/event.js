@@ -12,7 +12,8 @@ const eventSchema = new schema({
       genre: String,
       place: String,
       friendsGoing: String,
-      signedUp: String
+      signedUp: String,          // val used to determine if event was signed up for
+      identifier: String         // random String generated, which is used to idetify each event
     }
 });
 
