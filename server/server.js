@@ -5,14 +5,18 @@ var MongoStore = require('connect-mongo')(session);
 var mongoStore = new MongoStore({url: 'mongodb://localhost/LUX'});
 var passport = require("passport");//for identification
 
+var fs = require('file-system');
+var path = require("path");
+var https = require('https')
+
 // app.set("view engine", 'ejs');
 
 //small but important fix:
 //very, very important!
 //DO NOT KEEP THIS IN IF IT GOES INTO PRODUCTION
 var certOptions = {
-  key: fs.readFileSync(path.resolve('/server.key')),
-  cert: fs.readFileSync(path.resolve('/server.crt'))
+  key: fs.readFileSync(path.resolve('server.key')),
+  cert: fs.readFileSync(path.resolve('server.crt'))
 }
 
 //connecting to db
@@ -51,5 +55,5 @@ app.use("/auth", rtAuth);
 const rtReco = require("./routes/rtReco.js");
 app.use("/reco", rtReco);
 
-app.listen(5000);
+var server = https.createServer(certOptions, app).listen(5000)
 console.log("lift off");

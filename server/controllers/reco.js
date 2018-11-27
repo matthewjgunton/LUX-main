@@ -69,6 +69,8 @@ function ranking(events){
       return res.json({error: true});
   }
 
+}
+
   // NOTE: These functions as of right now are not called, not sure when we want to call them
   // generates random string for the event, used to distinguish event from others
   function identify(events) {
@@ -80,15 +82,18 @@ function ranking(events){
       }
     }
   }
-  
-  // checks if any events have same identifier
-  function checkEvents(events) {
-    for (var i = 0; i < events.length-1; i++) {
-      if (events[i].identifier.equals(events[1+1].identifier) {
-          identify(events); // if so changes all of the elements again
-                            // pretty basic and inefficient, can be changed later
-      }
-    }
-  }
 
-}
+  // checks if any events have same identifier
+//   function checkEvents(events) {
+//
+//     //commented out for now so that we can make the front-end back-end work simply
+//
+//   //   for (var i = 0; i < events.length-1; i++) {
+//   //     if (events[i].identifier.equals(events[1+1].identifier) {
+//   //         identify(events); // if so changes all of the elements again
+//   //                           // pretty basic and inefficient, can be changed later
+//   //     }
+//   //   }
+//   // }
+//
+// }
