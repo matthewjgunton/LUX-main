@@ -8,5 +8,8 @@ sendRoutes.route("/setPreferences")
   .get(controller.retrieveCurrentPref)
   .post(controller.setPref);
 
+sendRoutes.route("/getData")
+  .get(controller.findEvents);
+
 
 module.exports = sendRoutes;

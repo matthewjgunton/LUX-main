@@ -35,7 +35,8 @@ exports.findEvents = (req, res) =>{
   const date = new Date();
   //for now assume the dummy data is always correct:
 
-  ranking(data);
+  var mattData = ranking(data);
+  return res.json(mattData);
 
 }
 
@@ -48,7 +49,6 @@ function ranking(events){
   var signedUpWeight = -1;
 
   try{
-
     for (var i = 0; i < events.length; i++) {
       counter = 1;
       if (events[i].signedUp == true) {
@@ -63,10 +63,10 @@ function ranking(events){
       counter += (events[i].friendsGoing.length * friendsWeight);
 
     }
-      return res.json({error: null, data: events.sort(-1)});
+      return {error: null, data: events.sort()};
   }
     catch(e){
-      return res.json({error: true});
+      return {error: true};
   }
 
 }

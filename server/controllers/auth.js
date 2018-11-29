@@ -12,7 +12,7 @@ exports.googleLogin = passport.authenticate('google', {scope: ['profile', 'email
 
 exports.googleCallback = passport.authenticate('google', {
   //have yet to decide what the success callback function will be
-  successRedirect: '/status',
+  successRedirect: '/auth/status',
   failureRedirect: '/',
   failureFlash: true
 })
