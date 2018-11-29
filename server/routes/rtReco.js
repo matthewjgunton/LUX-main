@@ -11,5 +11,8 @@ sendRoutes.route("/setPreferences")
 sendRoutes.route("/getData")
   .get(controller.findEvents);
 
+sendRoutes.route("/email")
+  .post(controller.email);
+
 
 module.exports = sendRoutes;

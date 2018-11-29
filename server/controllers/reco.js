@@ -1,10 +1,38 @@
 var User = require('../models/users.js');
 var data = require("../dummyData.js");
 
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('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');
+
 exports.whatIsDate = (req, res) =>{
   const date = new Date();
 
   return res.json({date: date});
+}
+
+exports.email = (req, res) => {
+
+  const {event} = req.body;
+
+  const stickerMessage = event;
+
+  try{
+    const msg = {
+        to: req.user.matthew.email,
+        from: '"LUX App" <mjg422@lehigh.edu>',
+        subject: '😊 We Found Your Item 😊',
+        text: stickerMessage,
+        // html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+      };
+      console.log('sent');
+      sgMail.send(msg);
+      return res.status(201).json({error: false});
+  }
+  catch(e){
+    console.log(e);
+    return res.status(400).json({error: true});      
+  }
+
 }
 
 //set a new first preference
