@@ -2,7 +2,7 @@ var User = require('../models/users.js');
 var data = require("../dummyData.js");
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+sgMail.setApiKey('xxxxxxxxxxx');
 
 exports.whatIsDate = (req, res) =>{
   const date = new Date();
