@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YDy-up-Dpi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed View Controller-->
+        <scene sceneID="vGj-wn-Jie">
+            <objects>
+                <viewController id="YDy-up-Dpi" customClass="FeedViewController" customModule="LUXApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OYl-vJ-zqm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Cards Left." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6O-R0-aoH">
+                                <rect key="frame" x="132.5" y="333" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzQ-J3-hsp" customClass="StaticShadowHeaderView" customModule="LUXApp" customModuleProvider="target">
+                                <rect key="frame" x="5" y="40" width="365" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="aOJ-dM-sK8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EwO-Z9-LhF" customClass="SwipeableCardViewContainer" customModule="LUXApp" customModuleProvider="target">
+                                <rect key="frame" x="5" y="186" width="365" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="itk-cO-3gx"/>
+                                </constraints>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfN-cB-uBj" customClass="BEMCheckBox">
+                                <rect key="frame" x="146" y="595" width="69" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideBox" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D6q-id-h0v" firstAttribute="bottom" secondItem="mfN-cB-uBj" secondAttribute="bottom" constant="20" id="29E-E2-vis"/>
+                            <constraint firstItem="EwO-Z9-LhF" firstAttribute="leading" secondItem="D6q-id-h0v" secondAttribute="leading" constant="5" id="2q6-4a-Evu"/>
+                            <constraint firstItem="EwO-Z9-LhF" firstAttribute="centerX" secondItem="D6q-id-h0v" secondAttribute="centerX" id="4p2-1c-UoQ"/>
+                            <constraint firstItem="EwO-Z9-LhF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NzQ-J3-hsp" secondAttribute="bottom" constant="10" id="6eg-F4-AUf"/>
+                            <constraint firstItem="NzQ-J3-hsp" firstAttribute="centerX" secondItem="D6q-id-h0v" secondAttribute="centerX" id="IB8-mJ-g8R"/>
+                            <constraint firstItem="NzQ-J3-hsp" firstAttribute="top" secondItem="D6q-id-h0v" secondAttribute="top" constant="20" id="Jv9-Fz-ecF"/>
+                            <constraint firstItem="M6O-R0-aoH" firstAttribute="centerY" secondItem="D6q-id-h0v" secondAttribute="centerY" id="Ks6-4J-OSw"/>
+                            <constraint firstItem="EwO-Z9-LhF" firstAttribute="centerY" secondItem="D6q-id-h0v" secondAttribute="centerY" id="OrC-VP-wmG"/>
+                            <constraint firstItem="M6O-R0-aoH" firstAttribute="centerX" secondItem="D6q-id-h0v" secondAttribute="centerX" id="Soy-r8-4vM"/>
+                            <constraint firstItem="NzQ-J3-hsp" firstAttribute="leading" secondItem="D6q-id-h0v" secondAttribute="leading" constant="5" id="bH2-53-Z66"/>
+                            <constraint firstItem="D6q-id-h0v" firstAttribute="trailing" secondItem="EwO-Z9-LhF" secondAttribute="trailing" constant="5" id="bdf-5y-1ZQ"/>
+                            <constraint firstItem="mfN-cB-uBj" firstAttribute="centerX" secondItem="OYl-vJ-zqm" secondAttribute="centerX" id="ifw-cO-wet"/>
+                            <constraint firstItem="D6q-id-h0v" firstAttribute="trailing" secondItem="NzQ-J3-hsp" secondAttribute="trailing" constant="5" id="z1u-wD-4xT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D6q-id-h0v"/>
+                    </view>
+                    <connections>
+                        <outlet property="myCheckBox" destination="mfN-cB-uBj" id="N9V-er-Ib5"/>
+                        <outlet property="swipeableCardView" destination="EwO-Z9-LhF" id="5XS-el-jIG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXq-2a-WkF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.6" y="-260.41979010494754"/>
+        </scene>
+    </scenes>
+</document>
