@@ -2,7 +2,7 @@ LUX created by Matthew J Gunton, Brian Snyder, Dave Jha, and Max Machado
 
 Lehigh-University-eXchange
 
-LUX is an iOS exclusive, with a Node.JS background
+LUX is an iOS exclusive, with a Node.JS backend
 
 
 The app serves two purposes:
